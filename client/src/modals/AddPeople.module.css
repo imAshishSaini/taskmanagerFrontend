@@ -1,0 +1,76 @@
+.addContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-size: 0.9rem;
+}
+
+.addBody {
+    background-color: #FFFFFF;
+    padding-top: 40px;
+    width: 535px;
+    height: 230px;
+    border-radius: 10px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    /* align-items: start; */
+    padding: 20px;
+    padding-top: 40px;
+    margin: auto;
+}
+
+.addBody input {
+    width: 490px;
+    height: 50px;
+    border: 2px solid #D0D0D0;
+    border-radius: 11px;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.addBtnSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 490px;
+    padding-bottom: 20px;
+    gap: 10px;
+}
+
+.addBtnSection button {
+    border-radius: 15px;
+    background-color: #17A2BB;
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+.addBtnSection .cancelBtn {
+    background-color: #FFFFFF;
+    color: #CF3636;
+    border: 2px solid #CF3636;
+}
+
+.removeBtnSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+    width: 490px;
+}
+
+.removeBtnSection button {
+    width: 100%;
+}

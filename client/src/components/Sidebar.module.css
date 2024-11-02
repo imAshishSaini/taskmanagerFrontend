@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #FFFFFF;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.icon {
+  width: 24px; /* Adjusted size for better alignment */
+  height: 24px;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.menuItem {
+  display: flex;
+  align-items: center; /* Center icon and text vertically */
+  justify-content: start; /* Left-align icon and text */
+  width: 100%; /* Take full width of sidebar */
+  padding: 10px;
+  padding-left: 15%;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menuItem h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #707070;
+  margin: 0; /* Remove default margin for better alignment */
+}
+
+.active {
+  background-color: #4391ED;
+  color: #ffffff; /* Ensures text is visible on active background */
+}
+
+.active h2 {
+  color: #000000;
+}
+
+.logoutBtn {
+  margin-top: auto;
+  padding: 10px;
+  width: 100%; /* Full width for the logout button */
+  border: none;
+  background-color: transparent;
+  color: #dc3545;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center-align icon and text */
+  gap: 8px;
+}
+
+.logoutIcon {
+  font-size: 18px;
+}
+
+.logoutBtn:hover {
+  color: #c82333;
+}
+
+.divider {
+  width: 0.5px;
+  background-color: #e9f2ff;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+}

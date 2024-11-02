@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #eef2f5;
+    flex: 0 0 300px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    /* gap: 10px; */
+}
+
+.controls .addBtn {
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+    font-size: 2rem;
+    padding-right: 50px;
+    margin-top: -8px;
+}
+
+.collapseIcon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.tasks {
+    width: 350px;
+    min-height: 80%;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.tasks::-webkit-scrollbar {
+    width: 12px;
+}
+
+.tasks::-webkit-scrollbar-track {
+    background: #D6EAF4;
+    border-radius: 10px;
+}
+
+.tasks::-webkit-scrollbar-thumb {
+    width: 8px;
+    background: #8DAAB9;
+    border-radius: 10px;
+    margin: 2px;
+
+}
+
+.tasks::-webkit-scrollbar-thumb:hover {
+    background: #7a9fab;
+}

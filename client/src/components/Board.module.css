@@ -1,0 +1,70 @@
+.boardContainer {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    /* width: 80vw; */
+    background-color: #FFFFFF;
+    /* padding: 10px; */
+    /* border-radius: 8px; */
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
+}
+
+.header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.boardTitle {
+    display: flex;
+    align-items: center;
+}
+
+.boardTitle span {
+    margin-top: -15px;
+    margin-left: 30px;
+    color: #707070;
+    cursor: pointer;
+}
+
+.peopleIcon {
+    margin-right: 5px;
+}
+
+.filterDropDown {
+    border: none;
+    border-radius: 0px;
+}
+
+.body {
+    display: flex;
+    height: 60%;
+    width: 100%;
+    gap: 20px;
+    padding-top: 40px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.body::-webkit-scrollbar {
+    height: 8px;
+}
+
+.body::-webkit-scrollbar-track {
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.body::-webkit-scrollbar-thumb {
+    background: #9CB7C5;
+    border-radius: 10px;
+}
+
+.body::-webkit-scrollbar-thumb:hover {
+    background: #7a9fab;
+}

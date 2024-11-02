@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.authLayout {
+  flex-direction: row;
+}
+
+.dashboardLayout {
+  justify-content: center;
+}
+
+.right {
+  flex-grow: 1;
+  padding: 20px;
+}

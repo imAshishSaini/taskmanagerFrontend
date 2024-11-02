@@ -1,0 +1,33 @@
+.confirmContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-size: 0.9rem;
+}
+
+.confirmBody {
+    background-color: #FFFFFF;
+    padding-top: 40px;
+    width: 535px;
+    height: 230px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.okBtn {
+    border-radius: 15px;
+    background-color: #17A2BB;
+    color: #FFFFFF;
+    font-size: 1rem;
+}

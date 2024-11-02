@@ -1,0 +1,214 @@
+.container {
+    position: relative;
+    /* Ensures children use this as the reference */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.moreOptions {
+    cursor: pointer;
+}
+
+.optionsMenu {
+    position: absolute;
+    width: 150px;
+    height: 130px;
+    top: 30px;
+    right: 13px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.optionsMenu button {
+    background: none;
+    padding: 8px 16px;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 0px;
+}
+
+.optionsMenu button:hover {
+    background-color: #f6f6f6;
+}
+
+.topSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prioritySection {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.prioritySection .priorityIndicator {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+
+.highPriority {
+    background-color: #FF2473;
+}
+
+.moderatePriority {
+    background-color: #18B0FF;
+}
+
+.lowPriority {
+    background-color: #63C05B;
+}
+
+.priority {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #707070;
+}
+
+.prioritySection .assignee {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: #FFEBEB;
+    color: #000000;
+    font-weight: bold;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.header h2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    text-overflow: ellipsis;
+    max-height: 2.4em;
+    line-height: 1.2em;
+}
+
+.assignee {
+    background-color: #eee;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.checklistSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -8px;
+    font-weight: bold;
+}
+
+.collapseToggle {
+    background: #EEECEC;
+    border: none;
+    border-radius: 3.2px;
+    width: 25px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.checklist {
+    margin-top: 8px;
+    gap: 10px;
+}
+
+.checklistItem {
+    display: flex;
+    align-items: center;
+    border: 1px solid #EEECEC;
+    border-radius: 12px;
+    height: 40px;
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+.checklistCheckbox {
+    margin-right: 10px;
+    height: 15px;
+    width: 15px;
+    accent-color: #17A2B8;
+    cursor: pointer;
+}
+
+.checklistItem span {
+    font-size: 1.2rem;
+}
+
+.dueDate {
+    font-size: 12px;
+    height: 25px;
+    padding: 7px;
+    border: none;
+    background-color: #DBDBDB;
+    color: #5A5A5A;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.done {
+    background-color: #63C05B;
+    color: #FFFFFF;
+}
+
+.expired {
+    background-color: #CF3636;
+    color: #FFFFFF;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.statusTabs {
+    display: flex;
+    gap: 8px;
+}
+
+.statusBtn {
+    height: 25px;
+    padding: 4px 8px;
+    border: none;
+    background-color: #EEECEC;
+    color: #707070;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.statusBtn:hover {
+    background-color: #ddd;
+}

@@ -1,0 +1,251 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-size: 0.9rem;
+}
+
+.body {
+  background-color: #FFFFFF;
+  padding: 20px;
+  width: 600px;
+  height: 540px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  /* font-weight: bold; */
+}
+
+.asterisk {
+  color: red;
+  /* margin-left: 2px; */
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #E2E2E2;
+  border-radius: 5px;
+}
+
+/* Priority Section */
+.prioritySection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.priorityOptions {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.priorityBox {
+  display: flex;
+  padding: 8px 8px;
+  margin-top: -4px;
+  border-radius: 8px;
+  border: 1px solid #E2E2E2;
+  cursor: pointer;
+  color: #707070;
+  font-weight: bold;
+  user-select: none;
+  font-size: 0.8rem;
+  align-items: center;
+  gap: 5px;
+}
+
+.priorityBox:nth-child(1) .priorityIndicator {
+  height: 9px;
+  width: 9px;
+  background-color: #FF2473;
+  border-radius: 50%;
+}
+
+.priorityBox:nth-child(2) .priorityIndicator {
+  height: 9px;
+  width: 9px;
+  background-color: #18B0FF;
+  border-radius: 50%;
+}
+
+.priorityBox:nth-child(3) .priorityIndicator {
+  height: 9px;
+  width: 9px;
+  background-color: #63C05B;
+  border-radius: 50%;
+}
+
+.selected {
+  background-color: #E2E2E2;
+  /* color: black; */
+}
+
+.assigneeSection {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  gap: 10px;
+}
+
+.assigneeSuggestions {
+  border: 0.5px solid #E2E2E2;
+  padding: 8px;
+  border-radius: 4px;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #FFFFFF;
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.assigneeSuggestions .assigneeSuggestionsItem {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.assigneeSuggestions .assigneeSuggestionsItem:hover {
+  background-color: #f1f1f1;
+}
+
+/* Checklist Section */
+.checklistSection {
+  height: 280px;
+  margin-bottom: 15px;
+  padding-right: 10px;
+  overflow-y: scroll;
+}
+
+.checklistItem {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  border: 2px solid #EEECEC;
+  border-radius: 12px;
+  padding-left: 10px;
+}
+
+.checklistItem .checkbox {
+    margin-right: 10px;
+    height: 15px;
+    width: 15px;
+    accent-color: #17A2B8;
+    cursor: pointer;
+}
+
+.checklistItem .input {
+  border: 0px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.deleteBtn {
+  margin-right: 20px;
+  width: 20px;
+  height: 30px;
+  background-color: #FFFFFF;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addBtn {
+  /* margin-left: -60px; */
+  width: 105px;
+  background-color: #FFFFFF;
+  color: #707070;
+  border: none;
+  /* padding: 5px; */
+  /* border-radius: 5px; */
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.checklistSection::-webkit-scrollbar {
+  width: 8px;
+}
+
+.checklistSection::-webkit-scrollbar-track {
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.checklistSection::-webkit-scrollbar-thumb {
+  background: #9CB7C5;
+  border-radius: 10px;
+}
+
+.checklistSection::-webkit-scrollbar-thumb:hover {
+  background: #7a9fab;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dueDateSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.dateBtn {
+  width: 170px;
+  height: 40px;
+  background-color: #FFFFFF;
+  color: #707070;
+  border: 2px solid #E2E2E2;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cancelBtn {
+  width: 150px;
+  height: 40px;
+  background-color: #FFFFFF;
+  color: #CF3636;
+  border: 2px solid #CF3636;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.saveBtn {
+  width: 150px;
+  height: 40px;
+  background-color: #17A2B8;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+}
