@@ -18,7 +18,7 @@
 
 .inputWrapper {
     position: relative;
-    width: 75%; 
+    width: 75%;
     margin: 0px;
 }
 
@@ -36,12 +36,20 @@
     color: #828282;
 }
 
+.eyeIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
 .icon {
     position: absolute;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    width: 24px; 
+    width: 24px;
     height: 24px;
 }
 

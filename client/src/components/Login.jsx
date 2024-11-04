@@ -5,11 +5,14 @@ import passwordIcon from '../assets/passwordIcon.png'
 import API from '../services/api'
 import { useNavigate } from 'react-router-dom'
 import {Toaster, toast} from 'react-hot-toast'
+import eye from '../assets/eye.png'
+import eyeSlash from '../assets/eyeSlash.png'
 
 function Login({ setIsAuthenticated }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const Navigate = useNavigate()
 
   useEffect(() => {
@@ -42,7 +45,10 @@ function Login({ setIsAuthenticated }) {
 
       <div className={styles.inputWrapper}>
         <img src={passwordIcon} className={styles.icon} />
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+        <input type={showPassword ? 'text' : 'password'} value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+        <span className={styles.eyeIcon} onClick={() => setShowPassword(!showPassword)}>
+          <img src={showPassword ? eyeSlash : eye} alt="Toggle Password Visibility" />
+        </span>
       </div>
 
       <button className={styles.loginBtn} onClick={handleLogin}>Log in</button>
