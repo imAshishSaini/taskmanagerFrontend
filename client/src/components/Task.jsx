@@ -4,7 +4,7 @@ import API from '../services/api'
 import Stroke from '../assets/Stroke.png'
 import Stroke1 from '../assets/Stroke1.png'
 import moreOptionsIcon from '../assets/moreOptionsIcon.png'
-import { Toaster } from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 import AddTask from '../modals/AddTask'
 import DeleteTask from '../modals/DeleteTask'
 
@@ -40,6 +40,13 @@ function Task({ task, onStatusChange }) {
     const updatedChecklist = [...task.checklist]
     updatedChecklist[index].checked = !updatedChecklist[index].checked
     setCheckedItems(updatedChecklist.filter(item => item.checked).length)
+  }
+
+  const handleShare = () => {
+    const link = `${window.location.origin}/public/${task.shareId}`
+    navigator.clipboard.writeText(link).then(() => {
+      toast.success('Link copied!')
+    })
   }
 
   const handleStatusChange = async (newStatus) => {
@@ -145,7 +152,7 @@ function Task({ task, onStatusChange }) {
         {showOptions && (
           <div className={styles.optionsMenu}>
             <button onClick={openEditModal}>Edit</button>
-            <button onClick={() => {/* Implement share functionality */ }}>Share</button>
+            <button onClick={handleShare}>Share</button>
             <button onClick={openDeleteModal} style={{ color: '#CF3636' }}>Delete</button>
           </div>
         )}

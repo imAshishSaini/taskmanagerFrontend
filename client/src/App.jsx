@@ -6,6 +6,7 @@ import Login from './components/Login.jsx'
 import Register from './components/Register.jsx'
 import Dashboard from './components/Dashboard.jsx'
 import {Toaster} from 'react-hot-toast'
+import PublicPage from './components/PublicPage.jsx'
 import API from './services/api.js'
 
 function App() {
@@ -71,6 +72,7 @@ function AppContent({ isAuthenticated, setIsAuthenticated, handleLogout }) {
           path="/dashboard/*"
           element={isAuthenticated ? <Dashboard handleLogout={handleLogout} /> : <Navigate to="/login" replace />}
         />
+        <Route path="/public/:shareId" element={<PublicPage />} />
       </Routes>
       <Toaster position="top-right"/>
     </div>
