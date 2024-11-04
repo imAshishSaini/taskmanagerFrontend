@@ -82,6 +82,7 @@ function AddTaskModal({ closeModal, assignedPerson, taskData = {} }) {
         checklist,
         dueDate
       }
+      console.log('Task Details:', taskDetails)
       if(isEditMode) {
         await API.patch(`/api/task/${taskData._id}/update`, taskDetails, {
           headers: {
