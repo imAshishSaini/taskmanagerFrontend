@@ -5,7 +5,7 @@ import LeftSection from './components/LeftSection.jsx'
 import Login from './components/Login.jsx'
 import Register from './components/Register.jsx'
 import Dashboard from './components/Dashboard.jsx'
-import {Toaster} from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 import PublicPage from './components/PublicPage.jsx'
 import API from './services/api.js'
 
@@ -50,11 +50,11 @@ function App() {
 
 function AppContent({ isAuthenticated, setIsAuthenticated, handleLogout }) {
   const location = useLocation()
-  const isAuthPage = location.pathname === '/login' || location.pathname === '/register'
+  const isAuthPage = ['/login', '/register'].includes(location.pathname)
 
   return (
     <div className={`${styles.container} ${isAuthPage ? styles.authLayout : styles.dashboardLayout}`}>
-      {isAuthPage && <LeftSection />}
+      {isAuthPage && <LeftSection className="leftSection" />}
       <Routes>
         <Route
           path="/"
@@ -74,7 +74,7 @@ function AppContent({ isAuthenticated, setIsAuthenticated, handleLogout }) {
         />
         <Route path="/public/:shareId" element={<PublicPage />} />
       </Routes>
-      <Toaster position="top-right"/>
+      <Toaster position="top-right" />
     </div>
   )
 }

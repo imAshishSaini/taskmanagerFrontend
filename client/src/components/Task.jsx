@@ -156,7 +156,7 @@ function Task({ task, onStatusChange }) {
             <button onClick={openDeleteModal} style={{ color: '#CF3636' }}>Delete</button>
           </div>
         )}
-        {isEditModalOpen && <AddTask closeModal={closeEditModal} task={task} />}
+        {isEditModalOpen && <AddTask closeModal={closeEditModal} taskData={task} />}
       </div>
       <div className={styles.header}>
         <h2 title={task.title}>{task.title}</h2>

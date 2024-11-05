@@ -78,12 +78,12 @@ function PublicPage() {
                 </div>
             )}
             <div className={styles.footer}>
-                <div> <h5>Due Date
-                    {task.dueDate && (
+                <div> 
+                    {task.dueDate && (<h5>Due Date
                         <span className={`${styles.dueDate} ${isTaskDone() ? styles.done : isDueDateExpired() ? styles.expired : ''}`}>
                             {formatDate(task.dueDate)}
-                        </span>
-                    )}</h5>
+                        </span></h5>
+                    )}
                 </div>
             </div>
         </div>

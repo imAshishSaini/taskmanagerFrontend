@@ -1,25 +1,27 @@
 .container {
     flex: 0.4;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 
 .title {
     font-size: 2rem;
     font-weight: bold;
+    color: #333;
     margin-bottom: 40px;
 }
 
 .inputWrapper {
     position: relative;
     width: 75%;
-    margin: 0px;
+    margin: 1px 0;
 }
 
 .inputWrapper input {
@@ -64,7 +66,6 @@ button {
 
 .loginBtn {
     border: 1px solid #17A2B8;
-    border-radius: 30px;
     background: #FFFFFF;
     color: #17A2B8;
 }
@@ -78,4 +79,54 @@ button {
     background: #17A2B8;
     color: #FFFFFF;
     margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .inputWrapper input {
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    button {
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .noAccount {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .inputWrapper {
+        width: 90%;
+    }
+
+    .inputWrapper input {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .noAccount {
+        font-size: 0.9rem;
+    }
 }

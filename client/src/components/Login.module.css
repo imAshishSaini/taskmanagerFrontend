@@ -1,13 +1,14 @@
 .container {
     flex: 0.4;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 
 .title {
@@ -79,6 +80,57 @@
     background: #FFFFFF;
     color: #17A2B8;
     font-size: 1.2rem;
-    /* font-weight: bold; */
     cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .inputWrapper input {
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .loginBtn,
+    .registerBtn {
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .noAccount {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .inputWrapper {
+        width: 90%;
+    }
+
+    .inputWrapper input {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .loginBtn,
+    .registerBtn {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .noAccount {
+        font-size: 0.9rem;
+    }
 }

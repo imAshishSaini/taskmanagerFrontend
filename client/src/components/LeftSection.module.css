@@ -11,13 +11,14 @@
     color: #FFFFFF;
     overflow: hidden;
     text-align: center;
+    padding: 20px; /* added padding for smaller screens */
 }
 
 .alienBack {
     width: 15vw;
     height: 30vh;
     position: absolute;
-    top: 31vh;
+    top: 30vh;
     left: 22vw;
 }
 
@@ -31,9 +32,9 @@
 
 .welcome {
     font-size: 2rem;
-    margin: 0px 0;
+    margin: 0;
     position: absolute;
-    top: 69vh;
+    top: 70vh;
 }
 
 .subtitle {
@@ -41,37 +42,37 @@
     font-weight: 300;
     margin: 5px 0;
     position: absolute;
-    top: 73.5vh;
+    top: 75vh;
 }
 
+/* Tablet view adjustments */
 @media (max-width: 768px) {
     .alienBack {
         width: 25vw;
         height: 25vh;
-        top: 30vh;
+        top: 28vh;
         left: 15vw;
     }
 
     .alien {
         width: 20vw;
         height: 25vh;
-        top: 35vh;
+        top: 33vh;
         left: 17vw;
     }
 
     .welcome {
         font-size: 1.8rem;
-        position: absolute;
-        top: 62.5vh;
+        top: 60vh;
     }
 
     .subtitle {
         font-size: 0.9rem;
-        position: absolute;
-        top: 67vh;
+        top: 65vh;
     }
 }
 
+/* Mobile view adjustments */
 @media (max-width: 480px) {
     .alienBack {
         width: 35vw;
@@ -89,13 +90,38 @@
 
     .welcome {
         font-size: 1.5rem;
-        position: absolute;
-        top: 60vh;
+        top: 55vh;
     }
 
     .subtitle {
         font-size: 0.8rem;
-        position: absolute;
-        top: 69vh;
+        top: 62vh;
+    }
+}
+
+/* Small mobile screens adjustments */
+@media (max-width: 360px) {
+    .alienBack {
+        width: 40vw;
+        height: 18vh;
+        top: 20vh;
+        left: 8vw;
+    }
+
+    .alien {
+        width: 35vw;
+        height: 18vh;
+        top: 27vh;
+        left: 10vw;
+    }
+
+    .welcome {
+        font-size: 1.3rem;
+        top: 50vh;
+    }
+
+    .subtitle {
+        font-size: 0.7rem;
+        top: 58vh;
     }
 }
