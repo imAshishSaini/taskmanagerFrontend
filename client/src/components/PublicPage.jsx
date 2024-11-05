@@ -3,14 +3,39 @@ import { useParams } from 'react-router-dom'
 import API from '../services/api'
 import styles from './PublicPage.module.css'
 
+const addSuffixToDate = (day) => {
+    if (day > 3 && day < 21) return `${day}th`
+    switch (day % 10) {
+        case 1: return `${day}st`
+        case 2: return `${day}nd`
+        case 3: return `${day}rd`
+        default: return `${day}th`
+    }
+}
 function PublicPage() {
     const { shareId } = useParams()
     const [task, setTask] = useState(null)
+    const [checkedItems, setCheckedItems] = useState()
 
+    const formatDate = (date) => {
+        const dateObj = new Date(date)
+        const options = { month: 'short' }
+        const formattedDate = new Intl.DateTimeFormat('en-US', options).format(dateObj)
+        return `${formattedDate} ${addSuffixToDate(dateObj.getDate())}`
+    }
+
+    const isDueDateExpired = () => {
+        if (!task.dueDate) return false
+        return new Date(task.dueDate) < new Date() && task.taskStatus !== 'done'
+    }
+
+    const isTaskDone = () => task.taskStatus === 'done'
     useEffect(() => {
         const fetchTask = async () => {
             try {
                 const response = await API.get(`/api/task/public/${shareId}`)
+                console.log(response.data.task)
+                setCheckedItems(response.data.task.checklist ? response.data.task.checklist.filter(item => item.checked).length : 0)
                 setTask(response.data.task)
             } catch (error) {
                 console.error('Failed to fetch task:', error)
@@ -24,7 +49,7 @@ function PublicPage() {
         return <p>Loading...</p>
     }
     return (
-        <div className={styles.container}>
+        <div className={styles.publicContainer}>
             <div className={styles.topSection}>
                 <div className={styles.prioritySection}>
                     <span className={`${styles.priorityIndicator} ${task.priority.toUpperCase() === 'HIGH' ? styles.highPriority : task.priority.toUpperCase() === 'MODERATE' ? styles.moderatePriority : styles.lowPriority}`}></span>
@@ -36,18 +61,15 @@ function PublicPage() {
             </div>
             <div className={styles.checklistSection}>
                 <p>Checklist ({checkedItems}/{task.checklist ? task.checklist.length : 0})</p>
-                <button onClick={toggleCollapse} className={styles.collapseToggle}>
-                    {isCollapsed ? <img src={Stroke1} alt="Collapse" /> : <img src={Stroke} alt="Expand" />}
-                </button>
             </div>
-            {!isCollapsed && task.checklist && (
+            {task.checklist && (
                 <div className={styles.checklist}>
                     {task.checklist.map((item, index) => (
                         <div key={index} className={styles.checklistItem}>
                             <input
                                 type="checkbox"
                                 checked={item.checked}
-                                onChange={() => toggleChecklistItem(index)}
+                                readOnly
                                 className={styles.checklistCheckbox}
                             />
                             <span>{item.item}</span>
@@ -56,23 +78,14 @@ function PublicPage() {
                 </div>
             )}
             <div className={styles.footer}>
-                <div>
+                <div> <h5>Due Date
                     {task.dueDate && (
                         <span className={`${styles.dueDate} ${isTaskDone() ? styles.done : isDueDateExpired() ? styles.expired : ''}`}>
                             {formatDate(task.dueDate)}
                         </span>
-                    )}
-                </div>
-                <div className={styles.statusTabs}>
-                    {['backlog', 'inProgress', 'todo', 'done'].filter(status => status !== task.taskStatus).map(status => (
-                        <button key={status} onClick={() => handleStatusChange(status)} className={styles.statusBtn}>
-                            {status.toUpperCase()}
-                        </button>
-                    ))}
+                    )}</h5>
                 </div>
             </div>
-            {isDeleteModalOpen && <DeleteTask onConfirm={handleDelete} onCancel={closeDeleteModal} />}
-            <Toaster position="top-right" />
         </div>
     )
 }

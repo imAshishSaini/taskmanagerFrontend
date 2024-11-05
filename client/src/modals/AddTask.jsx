@@ -67,6 +67,11 @@ function AddTaskModal({ closeModal, assignedPerson, taskData = {} }) {
 
   const handleSave = async () => {
     try {
+      if (!title || !priority || checklist.length === 0 || checklist.some(item => !item.item)) {
+        console.error("Title, priority, and checklist items are required.");
+        return;
+      }
+      
       const token = localStorage.getItem('token')
       console.log('Request Headers:', {
         Authorization: `Bearer ${token}`,
@@ -90,13 +95,13 @@ function AddTaskModal({ closeModal, assignedPerson, taskData = {} }) {
           }
         })
       } else {
+        console.log('Task Details:', taskDetails)
         await API.post('/api/task/create', taskDetails, {
           headers: {  
             Authorization: `Bearer ${token}`
           }
         })
       }
-      console.log('Task created successfully', response.data)
       closeModal()
     } catch (error) {
       console.error('Task creation failed:', error)
