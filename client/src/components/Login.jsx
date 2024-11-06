@@ -4,7 +4,7 @@ import emailIcon from '../assets/emailIcon.png'
 import passwordIcon from '../assets/passwordIcon.png'
 import API from '../services/api'
 import { useNavigate } from 'react-router-dom'
-import {Toaster, toast} from 'react-hot-toast'
+import { Toaster, toast } from 'react-hot-toast'
 import eye from '../assets/eye.png'
 import eyeSlash from '../assets/eyeSlash.png'
 
@@ -24,7 +24,7 @@ function Login({ setIsAuthenticated }) {
   }, [Navigate, setIsAuthenticated])
   const handleLogin = async () => {
     try {
-      const {data} = await API.post('/api/user/login', {email, password})
+      const { data } = await API.post('/api/user/login', { email, password })
       localStorage.setItem('token', data.token)
       toast.success('Login Success')
       setIsAuthenticated(true)
@@ -54,7 +54,7 @@ function Login({ setIsAuthenticated }) {
       <button className={styles.loginBtn} onClick={handleLogin}>Log in</button>
       <p className={styles.noAccount}>Have no account yet?</p>
       <button className={styles.registerBtn} onClick={() => Navigate('/register')}>Register</button>
-      <Toaster position="top-right"/>
+      <Toaster position="top-right" />
     </div>
   )
 }

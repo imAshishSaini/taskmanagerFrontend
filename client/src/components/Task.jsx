@@ -9,7 +9,7 @@ import AddTask from '../modals/AddTask'
 import DeleteTask from '../modals/DeleteTask'
 
 const addSuffixToDate = (day) => {
-  if(day > 3 && day < 21) return `${day}th`
+  if (day > 3 && day < 21) return `${day}th`
   switch (day % 10) {
     case 1: return `${day}st`
     case 2: return `${day}nd`
@@ -82,11 +82,11 @@ function Task({ task, onStatusChange }) {
 
   const formatDate = (date) => {
     const dateObj = new Date(date)
-    const options = { month: 'short'}
+    const options = { month: 'short' }
     const formattedDate = new Intl.DateTimeFormat('en-US', options).format(dateObj)
     return `${formattedDate} ${addSuffixToDate(dateObj.getDate())}`
   }
-  
+
 
   const isDueDateExpired = () => {
     if (!task.dueDate) return false
@@ -99,7 +99,7 @@ function Task({ task, onStatusChange }) {
 
   const openDeleteModal = () => {
     setShowOptions(false)
-    setIsDeleteModalOpen(true)  
+    setIsDeleteModalOpen(true)
   }
 
   const closeDeleteModal = () => setIsDeleteModalOpen(false)
@@ -114,8 +114,8 @@ function Task({ task, onStatusChange }) {
               Authorization: `Bearer ${token}`,
             },
           })
-          console.log('API Response:', response) 
-          
+          console.log('API Response:', response)
+
           const { name } = response.data
           if (name) {
             const words = name.split(' ').filter(word => word.length > 0)
@@ -130,16 +130,27 @@ function Task({ task, onStatusChange }) {
         }
       }
     }
-  
+
     fetchAssigneeInitials()
   }, [task.assignees])
-  
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showOptions && !event.target.closest(`.${styles.optionsMenu}`)) {
+        setShowOptions(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [showOptions])
+
+
 
   return (
     <div className={styles.container}>
       <div className={styles.topSection}>
         <div className={styles.prioritySection}>
-          <span className={`${styles.priorityIndicator} ${task.priority.toUpperCase() === 'HIGH' ? styles.highPriority : task.priority.toUpperCase() === 'MODERATE' ? styles.moderatePriority : styles.lowPriority }`}></span>
+          <span className={`${styles.priorityIndicator} ${task.priority.toUpperCase() === 'HIGH' ? styles.highPriority : task.priority.toUpperCase() === 'MODERATE' ? styles.moderatePriority : styles.lowPriority}`}></span>
           <span className={styles.priority}>{task.priority.toUpperCase()} PRIORITY</span>
           {assigneeInitials && <div className={styles.assignee}>{assigneeInitials}</div>}
         </div>
@@ -185,7 +196,7 @@ function Task({ task, onStatusChange }) {
       <div className={styles.footer}>
         <div>
           {task.dueDate && (
-            <span className={`${styles.dueDate} ${ isTaskDone() ? styles.done : isDueDateExpired() ? styles.expired : ''}`}>
+            <span className={`${styles.dueDate} ${isTaskDone() ? styles.done : isDueDateExpired() ? styles.expired : ''}`}>
               {formatDate(task.dueDate)}
             </span>
           )}
@@ -198,7 +209,7 @@ function Task({ task, onStatusChange }) {
           ))}
         </div>
       </div>
-      {isDeleteModalOpen && <DeleteTask onConfirm={handleDelete} onCancel={closeDeleteModal}/>}
+      {isDeleteModalOpen && <DeleteTask onConfirm={handleDelete} onCancel={closeDeleteModal} />}
       <Toaster position="top-right" />
     </div>
   )

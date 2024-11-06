@@ -4,32 +4,33 @@ import collapseIcon from '../assets/collapseIcon.png'
 import AddTaskModal from '../modals/AddTask'
 import Task from './Task'
 
-function Column({title, tasks, onStatusChange, showAddButton}) {
+function Column({ title, tasks, onStatusChange, showAddButton, assignedPerson }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const toggleModal = () => {
+    console.log
     setIsModalOpen(!isModalOpen)
   }
 
   return (
     <div className={styles.container}>
-        <div className={styles.header}>
-            <h4>{title}</h4>
-            <div className={styles.controls}>
-              {showAddButton && <button className={styles.addBtn} onClick={toggleModal}>+</button>}
-              <img src={collapseIcon} className={styles.collapseIcon}/>
-            </div>
+      <div className={styles.header}>
+        <h4>{title}</h4>
+        <div className={styles.controls}>
+          {showAddButton && <button className={styles.addBtn} onClick={toggleModal}>+</button>}
+          <img src={collapseIcon} className={styles.collapseIcon} />
         </div>
-        <div className={styles.tasks}>
-          {tasks && tasks.map((task) => (
-            <Task
-              key={task._id}
-              task={task}
-              onStatusChange={onStatusChange}
-            />
-          ))}
-        </div>
-        {isModalOpen && <AddTaskModal closeModal={toggleModal} taskData={{}} />}
+      </div>
+      <div className={styles.tasks}>
+        {tasks && tasks.map((task) => (
+          <Task
+            key={task._id}
+            task={task}
+            onStatusChange={onStatusChange}
+          />
+        ))}
+      </div>
+      {isModalOpen && <AddTaskModal closeModal={toggleModal} assignedPerson={assignedPerson} taskData={{}} />}
     </div>
   )
 }

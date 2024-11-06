@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Analytics.module.css'
 import API from '../services/api'
-import {Toaster} from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 
 function Analytics() {
   const [analytics, setAnalytics] = useState({
@@ -13,19 +13,19 @@ function Analytics() {
     moderatePriority: 0,
     highPriority: 0,
     dueDateTasks: 0,
-  });
+  })
 
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
         const { data } = await API.get('/api/task/analytics')
-        setAnalytics(data);
+        setAnalytics(data)
       } catch (error) {
-        console.error('Error fetching analytics:', error);
+        console.error('Error fetching analytics:', error)
       }
-    };
-    fetchAnalytics();
-  }, []);
+    }
+    fetchAnalytics()
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -66,9 +66,9 @@ function Analytics() {
           </ul>
         </div>
       </div>
-      <Toaster position="top-right"/>
+      <Toaster position="top-right" />
     </div>
-  );
+  )
 }
 
-export default Analytics;
+export default Analytics

@@ -11,7 +11,7 @@
     color: #FFFFFF;
     overflow: hidden;
     text-align: center;
-    padding: 20px; /* added padding for smaller screens */
+    padding: 20px;
 }
 
 .alienBack {
@@ -45,7 +45,6 @@
     top: 75vh;
 }
 
-/* Tablet view adjustments */
 @media (max-width: 768px) {
     .alienBack {
         width: 25vw;
@@ -72,7 +71,6 @@
     }
 }
 
-/* Mobile view adjustments */
 @media (max-width: 480px) {
     .alienBack {
         width: 35vw;
@@ -99,7 +97,6 @@
     }
 }
 
-/* Small mobile screens adjustments */
 @media (max-width: 360px) {
     .alienBack {
         width: 40vw;

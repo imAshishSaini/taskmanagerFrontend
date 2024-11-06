@@ -75,10 +75,10 @@ function Settings({ handleLogout }) {
       const field = error.response?.data?.message.toLowerCase().includes('email')
         ? 'email'
         : error.response?.data?.message.toLowerCase().includes('name')
-        ? 'name'
-        : error.response?.data?.message.toLowerCase().includes('new password')
-        ? 'newPassword'
-        : 'oldPassword'
+          ? 'name'
+          : error.response?.data?.message.toLowerCase().includes('new password')
+            ? 'newPassword'
+            : 'oldPassword'
       setError({ [field]: error.response?.data?.message })
       toast.error(error.response?.data?.message || 'Update failed.')
     }

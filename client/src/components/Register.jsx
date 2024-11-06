@@ -5,7 +5,7 @@ import passwordIcon from '../assets/passwordIcon.png'
 import personIcon from '../assets/personIcon.png'
 import API from '../services/api'
 import { useNavigate } from 'react-router-dom'
-import {Toaster, toast} from 'react-hot-toast'
+import { Toaster, toast } from 'react-hot-toast'
 import eye from '../assets/eye.png'
 import eyeSlash from '../assets/eyeSlash.png'
 
@@ -20,7 +20,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      const { data } = await API.post('/api/user/register', { name, email, password})
+      const { data } = await API.post('/api/user/register', { name, email, password })
       toast.success('Register Success')
       console.log(data)
       Navigate('/login')
@@ -61,7 +61,7 @@ function Register() {
       <button className={styles.registerBtn} onClick={handleRegister}>Register</button>
       <p className={styles.noAccount}>Have an account ?</p>
       <button className={styles.loginBtn} onClick={() => Navigate('/login')}>Log in</button>
-      <Toaster position="top-right"/>
+      <Toaster position="top-right" />
     </div>
   )
 }

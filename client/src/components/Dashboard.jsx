@@ -19,7 +19,7 @@ function Dashboard({ handleLogout }) {
       case 'Analytics':
         return <Analytics />
       case 'Settings':
-        return <Settings handleLogout={handleLogout}/>
+        return <Settings handleLogout={handleLogout} />
       default:
         return <Board />
     }
@@ -50,7 +50,7 @@ function Dashboard({ handleLogout }) {
       )}
       <Toaster position="top-right" />
     </div>
-  );
+  )
 }
 
-export default Dashboard;
+export default Dashboard

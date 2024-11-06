@@ -1,6 +1,5 @@
 .container {
     position: relative;
-    /* Ensures children use this as the reference */
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;

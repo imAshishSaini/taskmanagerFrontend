@@ -13,6 +13,7 @@ function Board() {
   const [isAddPeopleOpen, setIsAddPeopleOpen] = useState(false)
 
   const handleAddPerson = (email) => {
+    console.log(email)
     setAssignedPerson(email)
     setIsAddPeopleOpen(false)
   }
@@ -24,18 +25,18 @@ function Board() {
 
   const handleStatusChange = (taskId, newStatus) => {
     setTasks(prevTasks => {
-      const updatedTasks = { ...prevTasks };
+      const updatedTasks = { ...prevTasks }
 
       Object.keys(updatedTasks).forEach(status => {
-        updatedTasks[status] = updatedTasks[status].filter(task => task._id !== taskId);
-      });
+        updatedTasks[status] = updatedTasks[status].filter(task => task._id !== taskId)
+      })
 
-      const movedTask = tasks.backlog.concat(tasks.todo, tasks.inProgress, tasks.done).find(task => task._id === taskId);
+      const movedTask = tasks.backlog.concat(tasks.todo, tasks.inProgress, tasks.done).find(task => task._id === taskId)
       if (movedTask) {
-        movedTask.status = newStatus;
-        updatedTasks[newStatus] = [movedTask, ...updatedTasks[newStatus]];
+        movedTask.status = newStatus
+        updatedTasks[newStatus] = [movedTask, ...updatedTasks[newStatus]]
       }
-      return updatedTasks;
+      return updatedTasks
     })
   }
 
@@ -86,6 +87,7 @@ function Board() {
           tasks={tasks.todo}
           onStatusChange={handleStatusChange}
           showAddButton
+          assignedPerson={assignedPerson}
         />
 
         <Column

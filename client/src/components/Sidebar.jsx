@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import styles from './Sidebar.module.css';
-import { FiLogOut } from 'react-icons/fi'; // Logout icon from react-icons library
-import logo from '../assets/logo.png';
-import layoutIcon from '../assets/layoutIcon.png';
-import analyticsIcon from '../assets/analyticsIcon.png';
-import settingIcon from '../assets/settingIcon.png';
-import {Toaster} from 'react-hot-toast'
+import React, { useState } from 'react'
+import styles from './Sidebar.module.css'
+import { FiLogOut } from 'react-icons/fi'
+import logo from '../assets/logo.png'
+import layoutIcon from '../assets/layoutIcon.png'
+import analyticsIcon from '../assets/analyticsIcon.png'
+import settingIcon from '../assets/settingIcon.png'
+import { Toaster } from 'react-hot-toast'
 
 function Sidebar({ setActiveComponent, handleShowLogoutModal }) {
-  const [activeItem, setActiveItem] = useState('Board');
+  const [activeItem, setActiveItem] = useState('Board')
 
   const handleItemClick = (component) => {
-    setActiveItem(component)  
+    setActiveItem(component)
     setActiveComponent(component)
   }
 
@@ -52,7 +52,7 @@ function Sidebar({ setActiveComponent, handleShowLogoutModal }) {
       <div className={styles.divider}></div>
       <Toaster position="top-right" />
     </div>
-  );
+  )
 }
 
-export default Sidebar;
+export default Sidebar

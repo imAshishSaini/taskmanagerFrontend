@@ -19,16 +19,16 @@
 }
 
 .icon {
-  width: 24px; /* Adjusted size for better alignment */
+  width: 24px;
   height: 24px;
-  margin-right: 10px; /* Space between icon and text */
+  margin-right: 10px;
 }
 
 .menuItem {
   display: flex;
-  align-items: center; /* Center icon and text vertically */
-  justify-content: start; /* Left-align icon and text */
-  width: 100%; /* Take full width of sidebar */
+  align-items: center;
+  justify-content: start;
+  width: 100%;
   padding: 10px;
   padding-left: 15%;
   margin-bottom: 20px;
@@ -40,12 +40,12 @@
   font-size: 18px;
   font-weight: bold;
   color: #707070;
-  margin: 0; /* Remove default margin for better alignment */
+  margin: 0;
 }
 
 .active {
   background-color: #4391ED;
-  color: #ffffff; /* Ensures text is visible on active background */
+  color: #ffffff;
 }
 
 .active h2 {
@@ -55,7 +55,7 @@
 .logoutBtn {
   margin-top: auto;
   padding: 10px;
-  width: 100%; /* Full width for the logout button */
+  width: 100%;
   border: none;
   background-color: transparent;
   color: #dc3545;
@@ -63,7 +63,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center-align icon and text */
+  justify-content: center;
   gap: 8px;
 }
 

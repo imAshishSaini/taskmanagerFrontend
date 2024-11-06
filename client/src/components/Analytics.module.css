@@ -1,52 +1,50 @@
 .container {
-  /* flex: 1; */
-    padding: 20px;
-    width: 100%;
-    margin: 0 auto;
-  }
-   
-  h2 {
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  
-  .analyticsGrid {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-  
-  .analyticsCard {
-    background-color: #f9fcff;
-    border-radius: 10px;
-    padding: 20px;
-    width: 30%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .analyticsCard ul {
-    list-style: circle;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .analyticsCard li {
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #333;
-  }
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
 
-  .nameSection {
-    display: flex;
-    align-items: center;
-  }
-  
-  .analyticsCard li span {
-    color: #8bc4f7;
-    font-size: 18px;
-    margin-right: 10px;
-  }
-  
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.analyticsGrid {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.analyticsCard {
+  background-color: #f9fcff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analyticsCard ul {
+  list-style: circle;
+  padding: 0;
+  margin: 0;
+}
+
+.analyticsCard li {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.nameSection {
+  display: flex;
+  align-items: center;
+}
+
+.analyticsCard li span {
+  color: #8bc4f7;
+  font-size: 18px;
+  margin-right: 10px;
+}
